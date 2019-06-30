@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    let n= prompt("nhập số lượng con số fibonacci muốn ");
+    let a=0,b=1,temp=null;
+    document.write("dãy fibonacci là: ");
+    for(let i=1;i<=n;i++){
+        temp=a;
+        a=b;
+        b+=temp;
+        document.write("<br>"+b);
+    }
+</script>
+
+</body>
+</html>

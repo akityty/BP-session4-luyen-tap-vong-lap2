@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+Nhập Số Tiền Bạn Gửi: <input id="tiengui" value="" type="number">
+<br>
+Nhập Lãi Suất Theo Năm: <input id="laisuat" value="" type="number">
+<br>
+Nhập Số Năm Bạn Gửi: <input id="thoihan" value="" type="number">
+<br>
+<button type="button" onclick="tinh()">Tính</button>
+<p id="kq"></p>
+<script>
+    let b = document.getElementById("kq");
+    function tinh() {
+        let tiengui = parseInt(document.getElementById("tiengui").value);
+        let laisuat = parseFloat(document.getElementById("laisuat").value);
+        let thoihan = parseInt(document.getElementById("thoihan").value);
+        let result = 0;
+        data = "";
+        for (let i = 1; i <= thoihan; i++) {
+            result = Math.pow((1+laisuat), 1) * tiengui;
+            data += "tổng số tiền có thể nhận sau " + i + " năm là " + result + "triệu đồng \n";
+            tiengui += Math.pow(laisuat, 1) * tiengui ;
+        }
+        b.innerText = data;
+    }
+</script>
+</body>
+</html>
